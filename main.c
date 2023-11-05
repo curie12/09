@@ -1,46 +1,28 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define ROWS 3
-#define COLS 3
+#define N_STUDENT 5
 
-void addMatrix(int A[][COLS], int B[][COLS],int C[][COLS])
-{
-	//C = A + B : for loop
-	int i, j;
-	for (i=0;i<ROWS;i++){
-		for(j=0;j<COLS;j++)
-			C[i][j] = A[i][j] + B[i][j];
-	}
-}
+/* run this program using the console pauser or add your own getch, system("pause") or input loop */
 
-void printMatrix(int A[][COLS])
-{
-	//for loop - AAC ¢¯a¨ùO¢¬| ¡Æ¡ËAU Aa¡¤A 
-	int i, j;
-	for (i=0;i<ROWS;i++){
-		for (j=0;j<COLS;j++){
-			printf("%3d", A[i][j]);
+int main(int argc, char *argv[]) {
+
+	int i;
+	int a[N_STUDENT] = {1, 2, 3, 4, 5};
+	int b[N_STUDENT] = {1, 2, 3, 4, 5};
+	int flag = 0;
+
+	for (i=0;i<N_STUDENT;i++)
+	{
+		if (a[i] != b[i])
+		{
+			printf("array a and b are not the same\n");
+			flag = 1;
 		}
-	printf("\n");
 	}
-}
 
-
-int main(int argc, char *argv[]) 
-{
-	int A[ROWS][COLS] = {
-		{2,3,0},
-		{8,9,1},
-		{7,0,5}};
-	int B[ROWS][COLS] = {
-		{1,0,0},
-		{0,1,0},
-		{0,0,1}};
-	int C[ROWS][COLS];
-
-	addMatrix(A,B,C);
-	printMatrix(C);
+	if (flag == 0)
+		printf("array a and b are the same\n");
 
 	system("PAUSE");
 	return 0;
